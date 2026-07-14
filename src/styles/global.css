@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: Arial, sans-serif;
+	color: #111827;
+	background: white;
+}
+
+body {
+	margin: 0;
+	line-height: 1.6;
+}
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 4rem 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+}
+
+a {
+	color: #0f3d73;
+}
