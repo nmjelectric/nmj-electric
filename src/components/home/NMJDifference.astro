@@ -1,0 +1,154 @@
+---
+const pillars = [
+  {
+    icon: "💲",
+    title: "Competitive Pricing",
+    tagline: "Low overhead. Honest pricing.",
+    description:
+      "We keep our overhead low so you pay for quality electrical work—not expensive advertising or unnecessary markups."
+  },
+  {
+    icon: "⚡",
+    title: "Quality Workmanship",
+    tagline: "Done right. Never rushed.",
+    description:
+      "Every job receives the attention it deserves. We focus on clean installations, accurate troubleshooting, and long-term reliability."
+  },
+  {
+    icon: "📞",
+    title: "Responsive Service",
+    tagline: "Fast communication. Dependable scheduling.",
+    description:
+      "From your first phone call to project completion, you'll receive prompt communication and reliable service."
+  }
+];
+---
+
+<section class="difference">
+
+    <div class="heading">
+
+        <p class="eyebrow">Why NMJ Electric?</p>
+
+        <h2>The NMJ Difference</h2>
+
+        <p>
+            We built our company around three simple promises to every customer.
+        </p>
+
+    </div>
+
+    <div class="grid">
+
+        {
+            pillars.map((pillar) => (
+
+                <article class="card">
+
+                    <div class="icon">
+                        {pillar.icon}
+                    </div>
+
+                    <h3>{pillar.title}</h3>
+
+                    <h4>{pillar.tagline}</h4>
+
+                    <p>{pillar.description}</p>
+
+                </article>
+
+            ))
+        }
+
+    </div>
+
+</section>
+
+<style>
+
+.difference{
+    padding:6rem 0;
+}
+
+.heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 3rem;
+}
+
+.eyebrow{
+    color:#0f3d73;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+
+}
+
+.card{
+
+    text-align:center;
+
+    padding:2rem;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    background:white;
+
+    transition:.2s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.icon{
+
+    font-size:3rem;
+
+}
+
+h3{
+
+    margin-top:1rem;
+
+}
+
+h4{
+
+    color:#0f3d73;
+
+    margin-bottom:1rem;
+
+}
+
+.card p{
+
+    color:#555;
+
+}
+
+@media(max-width:900px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

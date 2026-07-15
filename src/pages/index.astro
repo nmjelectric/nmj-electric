@@ -1,7 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Hero from "../components/Hero.astro";
-import ServicesOverview from "../components/ServicesOverview.astro";
+import Hero from "../components/home/Hero.astro";
+import ServicesOverview from "../components/home/ServicesOverview.astro";
+import NMJDifference from "../components/home/NMJDifference.astro";
+import OwnerIntro from "../components/home/OwnerIntro.astro";
+import CallToAction from "../components/home/CallToAction.astro";
 ---
 
 <MainLayout
@@ -10,4 +13,7 @@ import ServicesOverview from "../components/ServicesOverview.astro";
 >
 	<Hero />
 	<ServicesOverview />
+	<NMJDifference />
+	<OwnerIntro />
+	<CallToAction />
 </MainLayout>
