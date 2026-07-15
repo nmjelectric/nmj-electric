@@ -1,19 +1,13 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import ServicesOverview from "../components/ServicesOverview.astro";
 ---
 
 <MainLayout
 	title="Licensed Electrician in DFW"
-	description="NMJ Electric provides professional residential and commercial electrical services throughout the Dallas–Fort Worth area."
+	description="NMJ Electric provides residential and commercial electrical services throughout the Dallas–Fort Worth area."
 >
-	<h1>Reliable Electrical Services in DFW</h1>
-
-	<p>
-		NMJ Electric provides professional residential and commercial electrical
-		services throughout the Dallas–Fort Worth area.
-	</p>
-
-	<p>
-		<a href="tel:8177430124">Call (817) 743-0124</a>
-	</p>
+	<Hero />
+	<ServicesOverview />
 </MainLayout>

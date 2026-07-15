@@ -1,0 +1,100 @@
+---
+import Logo from "../assets/images/NMJLogo07152026.png";
+---
+
+<section class="hero">
+    <div class="content">
+
+        <img
+            src={Logo.src}
+            alt="NMJ Electric Logo"
+            class="logo"
+        />
+
+        <h1>
+            Reliable Electrical Services
+            <span>Across the Dallas–Fort Worth Metroplex</span>
+        </h1>
+
+        <p>
+            Residential and commercial electrical services performed by a
+            licensed Texas Master Electrician.
+        </p>
+
+        <div class="buttons">
+
+            <a href="tel:8177430124" class="primary">
+                Call (817) 743-0124
+            </a>
+
+            <a href="/contact" class="secondary">
+                Request a Quote
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+
+.hero{
+    padding:5rem 2rem;
+    text-align:center;
+}
+
+.content{
+    max-width:900px;
+    margin:auto;
+}
+
+.logo{
+    width:220px;
+    margin-bottom:2rem;
+}
+
+h1{
+    font-size:3.5rem;
+    margin-bottom:1rem;
+}
+
+h1 span{
+    display:block;
+    color:#0f3d73;
+    font-size:2rem;
+    margin-top:.5rem;
+}
+
+p{
+    font-size:1.25rem;
+    color:#555;
+    margin-bottom:2rem;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.primary,
+.secondary{
+
+    padding:1rem 2rem;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.primary{
+    background:#0f3d73;
+    color:white;
+}
+
+.secondary{
+    border:2px solid #0f3d73;
+    color:#0f3d73;
+}
+
+</style>

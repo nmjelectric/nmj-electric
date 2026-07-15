@@ -1,0 +1,126 @@
+---
+const services = [
+	{
+		title: "Electrical Troubleshooting",
+		description:
+			"Diagnosis and repair of electrical problems, tripping breakers, outages, and damaged equipment."
+	},
+	{
+		title: "Panel Upgrades",
+		description:
+			"Electrical panel replacements, service upgrades, breaker repairs, and safety improvements."
+	},
+	{
+		title: "EV Charger Installation",
+		description:
+			"Professional home and commercial EV charger installation with proper circuit sizing and protection."
+	},
+	{
+		title: "Electrical Inspections",
+		description:
+			"Detailed electrical inspections to identify safety concerns, aging equipment, and code issues."
+	},
+	{
+		title: "Residential Electrical",
+		description:
+			"Repairs, lighting, dedicated circuits, outlets, switches, surge protection, and other home electrical work."
+	},
+	{
+		title: "Commercial Electrical",
+		description:
+			"Electrical repairs, maintenance, installations, and troubleshooting for commercial properties."
+	}
+];
+---
+
+<section class="services">
+	<div class="heading">
+		<p class="eyebrow">Our Services</p>
+		<h2>Professional Electrical Solutions</h2>
+		<p>
+			Reliable residential and commercial electrical services throughout
+			the Dallas–Fort Worth area.
+		</p>
+	</div>
+
+	<div class="grid">
+		{
+			services.map((service) => (
+				<article class="card">
+					<h3>{service.title}</h3>
+					<p>{service.description}</p>
+					<a href="/services">Learn More →</a>
+				</article>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.services {
+		padding: 5rem 0;
+	}
+
+	.heading {
+		max-width: 700px;
+		margin-bottom: 2.5rem;
+	}
+
+	.eyebrow {
+		margin: 0 0 0.5rem;
+		color: #0f3d73;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	h2 {
+		margin: 0 0 1rem;
+		font-size: clamp(2rem, 5vw, 3rem);
+	}
+
+	.heading > p:last-child {
+		color: #4b5563;
+		font-size: 1.1rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.card {
+		padding: 1.75rem;
+		border: 1px solid #dbe1e8;
+		border-radius: 10px;
+		background: white;
+		box-shadow: 0 8px 24px rgba(15, 61, 115, 0.07);
+	}
+
+	.card h3 {
+		margin-top: 0;
+		font-size: 1.3rem;
+	}
+
+	.card p {
+		color: #4b5563;
+	}
+
+	.card a {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	@media (max-width: 850px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 560px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
