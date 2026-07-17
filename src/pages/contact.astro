@@ -1,0 +1,285 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { company } from "../data/company";
+---
+
+<MainLayout
+	title="Contact"
+	description={`Contact ${company.name} for residential and commercial electrical service throughout the ${company.serviceArea}.`}
+>
+	<section class="contact-hero">
+		<p class="eyebrow">Contact NMJ Electric</p>
+
+		<h1>Tell Us About Your Electrical Project</h1>
+
+		<p>
+			Provide a few details about the work you need, and NMJ Electric will
+			contact you to discuss the next steps.
+		</p>
+	</section>
+
+	<section class="contact-layout">
+		<div class="contact-information">
+			<h2>Contact Information</h2>
+
+			<div class="contact-item">
+				<h3>Phone</h3>
+				<a href={`tel:${company.phoneLink}`}>
+					{company.phoneDisplay}
+				</a>
+			</div>
+
+			<div class="contact-item">
+				<h3>Email</h3>
+				<a href={`mailto:${company.email}`}>
+					{company.email}
+				</a>
+			</div>
+
+			<div class="contact-item">
+				<h3>Service Area</h3>
+				<p>{company.serviceArea}</p>
+			</div>
+
+			<div class="contact-item">
+				<h3>What to Include</h3>
+
+				<p>
+					Describe the issue or project, provide the property location, and
+					include any useful photographs when we respond.
+				</p>
+			</div>
+		</div>
+
+		<div class="form-container">
+			<h2>Request Electrical Service</h2>
+
+			<form>
+				<div class="form-row">
+					<div class="form-field">
+						<label for="name">Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							autocomplete="name"
+							required
+						/>
+					</div>
+
+					<div class="form-field">
+						<label for="phone">Phone</label>
+						<input
+							type="tel"
+							id="phone"
+							name="phone"
+							autocomplete="tel"
+							required
+						/>
+					</div>
+				</div>
+
+				<div class="form-field">
+					<label for="email">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						autocomplete="email"
+						required
+					/>
+				</div>
+
+				<div class="form-field">
+					<label for="service">Type of Service</label>
+
+					<select id="service" name="service" required>
+						<option value="">Select a service</option>
+						<option value="residential">Residential Electrical</option>
+						<option value="commercial">Commercial Electrical</option>
+						<option value="troubleshooting">
+							Troubleshooting and Repairs
+						</option>
+						<option value="panel-upgrade">
+							Panel or Service Upgrade
+						</option>
+						<option value="lighting">Lighting Installation</option>
+						<option value="inspection">Electrical Inspection</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+
+				<div class="form-field">
+					<label for="location">Project City or ZIP Code</label>
+					<input
+						type="text"
+						id="location"
+						name="location"
+						autocomplete="postal-code"
+						required
+					/>
+				</div>
+
+				<div class="form-field">
+					<label for="message">How Can We Help?</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="7"
+						required
+					></textarea>
+				</div>
+
+				<button type="submit">Request Service</button>
+
+				<p class="form-note">
+					This form is currently being prepared and does not send submissions
+					yet. Please call or email NMJ Electric in the meantime.
+				</p>
+			</form>
+		</div>
+	</section>
+</MainLayout>
+
+<style>
+	.contact-hero {
+		max-width: 850px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 2rem;
+		text-align: center;
+	}
+
+	.eyebrow {
+		color: #f59e0b;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	.contact-hero h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		margin-bottom: 1.5rem;
+	}
+
+	.contact-hero > p:last-child {
+		max-width: 700px;
+		margin: 0 auto;
+		color: #4b5563;
+		font-size: 1.2rem;
+		line-height: 1.7;
+	}
+
+	.contact-layout {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 5rem;
+		display: grid;
+		grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+		gap: 3rem;
+	}
+
+	.contact-information,
+	.form-container {
+		padding: 2rem;
+		border: 1px solid #d1d5db;
+		border-radius: 0.75rem;
+		background: white;
+	}
+
+	.contact-information h2,
+	.form-container h2 {
+		margin-top: 0;
+		font-size: 2rem;
+	}
+
+	.contact-item {
+		padding: 1rem 0;
+		border-bottom: 1px solid #e5e7eb;
+	}
+
+	.contact-item:last-child {
+		border-bottom: 0;
+	}
+
+	.contact-item h3 {
+		margin: 0 0 0.4rem;
+		font-size: 1rem;
+	}
+
+	.contact-item p,
+	.contact-item a {
+		color: #4b5563;
+		line-height: 1.6;
+	}
+
+	.contact-item a {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.form-field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-bottom: 1.25rem;
+	}
+
+	label {
+		font-weight: 700;
+	}
+
+	input,
+	select,
+	textarea {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0.85rem;
+		border: 1px solid #9ca3af;
+		border-radius: 0.4rem;
+		font: inherit;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus {
+		outline: 3px solid rgba(245, 158, 11, 0.25);
+		border-color: #f59e0b;
+	}
+
+	button {
+		padding: 0.9rem 1.4rem;
+		border: 0;
+		border-radius: 0.4rem;
+		background: #f59e0b;
+		font: inherit;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.form-note {
+		margin-top: 1rem;
+		color: #6b7280;
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 800px) {
+		.contact-layout {
+			grid-template-columns: 1fr;
+		}
+
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

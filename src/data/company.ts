@@ -8,7 +8,7 @@ export const company = {
   phoneDisplay: "(817) 743-0124",
   phoneLink: "8177430124",
 
-  email: "service@nmjelectric.com",
+  email: "info@nmjelectric.com",
 
   serviceArea: "Dallas–Fort Worth Metroplex",
 

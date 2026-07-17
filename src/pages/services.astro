@@ -1,0 +1,93 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CallToAction from "../components/home/CallToAction.astro";
+import { services } from "../data/services";
+---
+
+<MainLayout
+	title="Electrical Services"
+	description="Residential and commercial electrical services from NMJ Electric throughout the Dallas–Fort Worth Metroplex."
+>
+	<section class="services-hero">
+		<p class="eyebrow">Our Services</p>
+		<h1>Professional Electrical Services for Homes and Businesses</h1>
+		<p>
+			NMJ Electric provides responsive, high-quality electrical work with clear
+			communication and competitive pricing.
+		</p>
+	</section>
+
+	<section class="services-grid">
+		{
+			services.map((service) => (
+				<article class="service-card">
+					<h2>{service.title}</h2>
+					<p>{service.shortDescription}</p>
+					<a href={`/services/${service.slug}`}>Learn More →</a>
+				</article>
+			))
+		}
+	</section>
+
+	<CallToAction />
+</MainLayout>
+
+<style>
+	.services-hero {
+		max-width: 850px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 2rem;
+		text-align: center;
+	}
+
+	.eyebrow {
+		color: #f59e0b;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		margin-bottom: 1.5rem;
+	}
+
+	.services-hero p {
+		font-size: 1.2rem;
+		color: #4b5563;
+	}
+
+	.services-grid {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 5rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.service-card {
+		padding: 2rem;
+		border: 1px solid #d1d5db;
+		border-radius: 0.75rem;
+		background: white;
+	}
+
+	.service-card h2 {
+		margin-top: 0;
+		font-size: 1.5rem;
+	}
+
+	.service-card p {
+		color: #4b5563;
+		line-height: 1.7;
+	}
+
+	.service-card a {
+		display: inline-block;
+		margin-top: 1rem;
+		font-weight: 700;
+		color: #0f3d73;
+		text-decoration: none;
+	}
+</style>
