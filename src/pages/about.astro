@@ -1,0 +1,119 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import NMJDifference from "../components/home/NMJDifference.astro";
+import CallToAction from "../components/home/CallToAction.astro";
+---
+
+<MainLayout
+	title="About"
+	description="Learn about NMJ Electric, its owner, experience, and commitment to quality workmanship, fair pricing, and responsive service."
+>
+	<section class="about-hero">
+		<p class="eyebrow">About NMJ Electric</p>
+		<h1>Experienced Electrical Work Without the Corporate Overhead</h1>
+		<p class="intro">
+			NMJ Electric is a locally owned electrical contractor serving residential
+			and commercial customers throughout the Dallas–Fort Worth area.
+		</p>
+	</section>
+
+	<section class="story">
+		<h2>Meet the Owner</h2>
+
+		<p>
+			NMJ Electric was founded by Mario Gonzales, a licensed Texas Master
+			Electrician with experience in electrical construction, troubleshooting,
+			maintenance, commercial facilities, fire alarm systems, and project
+			management.
+		</p>
+
+		<p>
+			Before entering the electrical trade, Mario served as a Sergeant in the
+			United States Marine Corps. That background helped shape the company’s
+			approach: communicate clearly, take responsibility, and complete the work
+			correctly.
+		</p>
+	</section>
+
+	<section class="purpose">
+		<h2>Why NMJ Electric Was Started</h2>
+
+		<p>
+			NMJ Electric was created to provide customers with professional electrical
+			service without unnecessary markups, rushed workmanship, or poor
+			communication.
+		</p>
+
+		<p>
+			The goal is simple: offer competitive pricing, take the time to perform
+			quality work, and respond quickly throughout the entire project.
+		</p>
+	</section>
+
+	<section class="credentials">
+		<h2>Experience and Credentials</h2>
+
+		<ul>
+			<li>Licensed Texas Master Electrician</li>
+			<li>Residential and commercial electrical experience</li>
+			<li>Electrical troubleshooting and maintenance</li>
+			<li>Facilities and project management experience</li>
+			<li>United States Marine Corps veteran</li>
+		</ul>
+	</section>
+
+	<NMJDifference />
+	<CallToAction />
+</MainLayout>
+
+<style>
+	.about-hero,
+	.story,
+	.purpose,
+	.credentials {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 3rem 0;
+	}
+
+	.about-hero {
+		text-align: center;
+		padding-top: 1rem;
+	}
+
+	.eyebrow {
+		color: #0f3d73;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		margin-bottom: 1.5rem;
+	}
+
+	h2 {
+		font-size: clamp(1.8rem, 4vw, 2.5rem);
+	}
+
+	.intro {
+		font-size: 1.25rem;
+		color: #4b5563;
+	}
+
+	.story p,
+	.purpose p,
+	.credentials li {
+		font-size: 1.1rem;
+		color: #374151;
+	}
+
+	.credentials ul {
+		padding-left: 1.25rem;
+	}
+
+	.credentials li {
+		margin-bottom: 0.75rem;
+	}
+</style>

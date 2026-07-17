@@ -1,6 +1,8 @@
+import Logo from "../assets/images/NMJ_Electric_Logo_Black_Yellow.svg";
+
 export const company = {
   name: "NMJ Electric, LLC",
-
+  logo: Logo,
   owner: "Mario Gonzales",
 
   phoneDisplay: "(817) 743-0124",
@@ -17,7 +19,15 @@ export const company = {
 
   brand: {
     primary: "#0f3d73",
-    accent: "#f59e0b"
+    accent: "#F7B719"
+  },
+
+  colors: {
+    primary: "#111111",     // Black
+    accent: "#F7B719",      // NMJ Gold
+    white: "#FFFFFF",
+    gray: "#6B7280",
+    lightGray: "#F5F5F5",
   },
 
   pillars: [

@@ -1,5 +1,6 @@
 ---
 import { company } from "../../data/company";
+import { navigation } from "../../data/navigation";
 ---
 
 <header>
@@ -7,10 +8,9 @@ import { company } from "../../data/company";
 		<a href="/" class="logo">NMJ Electric</a>
 
 		<nav>
-			<a href="/">Home</a>
-			<a href="/services">Services</a>
-			<a href="/about">About</a>
-			<a href="/contact">Contact</a>
+			{navigation.map((item) => (
+				<a href={item.href}>{item.label}</a>
+			))}
 		</nav>
 
 		<a class="call-button" href={`tel:${company.phoneLink}`}>
