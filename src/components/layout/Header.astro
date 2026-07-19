@@ -26,9 +26,12 @@ import { navigation } from "../../data/navigation";
 	}
 
 	.container {
+		width: 100%;
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 1rem 1.5rem;
+		box-sizing: border-box;
+
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -36,6 +39,8 @@ import { navigation } from "../../data/navigation";
 	}
 
 	.logo {
+		flex-shrink: 0;
+
 		font-size: 1.4rem;
 		font-weight: 700;
 		color: #111827;
@@ -44,6 +49,7 @@ import { navigation } from "../../data/navigation";
 
 	nav {
 		display: flex;
+		align-items: center;
 		gap: 1.5rem;
 	}
 
@@ -53,11 +59,45 @@ import { navigation } from "../../data/navigation";
 	}
 
 	.call-button {
+		flex-shrink: 0;
+
 		background: #0f3d73;
 		color: white;
 		padding: 0.75rem 1rem;
 		border-radius: 6px;
 		text-decoration: none;
 		font-weight: 700;
+		white-space: nowrap;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 1rem 1.25rem;
+			gap: 1rem;
+		}
+
+		nav {
+			display: none;
+		}
+
+		.logo {
+			font-size: 1.25rem;
+		}
+
+		.call-button {
+			padding: 0.7rem 0.9rem;
+			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 430px) {
+		.call-button {
+			font-size: 0;
+		}
+
+		.call-button::after {
+			content: "Call Now";
+			font-size: 0.9rem;
+		}
 	}
 </style>

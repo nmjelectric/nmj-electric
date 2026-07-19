@@ -21,9 +21,18 @@ import { services } from "../data/services";
 		{
 			services.map((service) => (
 				<article class="service-card">
-					<h2>{service.title}</h2>
-					<p>{service.shortDescription}</p>
-					<a href={`/services/${service.slug}`}>Learn More →</a>
+					<div class="service-image">
+						<img
+							src={service.image.src}
+							alt={service.title}
+						/>
+					</div>
+
+					<div class="service-content">
+						<h2>{service.title}</h2>
+						<p>{service.shortDescription}</p>
+						<a href={`/services/${service.slug}`}>Learn More →</a>
+					</div>
 				</article>
 			))
 		}
@@ -33,6 +42,20 @@ import { services } from "../data/services";
 </MainLayout>
 
 <style>
+
+	.service-image {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border-radius: 0.75rem 0.75rem 0 0;
+	}
+
+	.service-image img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
 	.services-hero {
 		max-width: 850px;
 		margin: 0 auto;

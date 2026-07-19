@@ -18,13 +18,26 @@ const { service } = Astro.props;
 ---
 
 <MainLayout
+	
+
 	title={service.title}
 	description={service.shortDescription}
 >
 	<section class="service-hero">
-		<p class="eyebrow">NMJ Electric Services</p>
-		<h1>{service.heroTitle}</h1>
-		<p>{service.heroText}</p>
+		<img
+			src={service.heroImage.src}
+			alt={service.title}
+			class="service-hero-image"
+		/>
+		<div class="service-hero-overlay">
+			<div class="service-hero-content">
+				<p class="eyebrow">NMJ Electric Services</p>
+
+				<h1>{service.heroTitle}</h1>
+
+				<p>{service.heroText}</p>
+			</div>
+		</div>
 	</section>
 
 	<section class="service-content">
@@ -59,10 +72,83 @@ const { service } = Astro.props;
 </MainLayout>
 
 <style>
+
+	.service-hero {
+		position: relative;
+		height: 28rem;
+		overflow: hidden;
+		border-radius: 1rem;
+		margin-bottom: 4rem;
+	}
+
+	.service-hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.service-hero-overlay {
+		position: absolute;
+		inset: 0;
+
+		display: flex;
+		align-items: center;
+
+		background:
+			linear-gradient(
+				90deg,
+				rgba(0,0,0,.70),
+				rgba(0,0,0,.35),
+				rgba(0,0,0,.15)
+			);
+	}
+
+	.service-hero-content {
+		max-width: 700px;
+		padding: 3rem;
+		color: white;
+	}
+
+	.service-hero-content h1 {
+		margin: .5rem 0 1rem;
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		line-height: 1.1;
+	}
+
+	.service-hero-content p {
+		font-size: 1.15rem;
+		line-height: 1.7;
+		max-width: 40rem;
+	}
+
+	.eyebrow {
+		font-size: .9rem;
+		font-weight: 700;
+		letter-spacing: .08em;
+		text-transform: uppercase;
+		color: #F7B719;
+	}
+
+	@media (max-width: 768px) {
+
+		.service-hero {
+			height: 36rem;
+		}
+
+		.service-hero-content {
+			padding: 2rem;
+		}
+
+		.service-hero-content h1 {
+			font-size: 2.5rem;
+		}
+	}
+
 	.service-hero {
 		max-width: 900px;
 		margin: 0 auto;
-		padding: 4rem 1.5rem 3rem;
+		padding: 2rem 1.5rem 2rem;
 		text-align: center;
 	}
 

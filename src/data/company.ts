@@ -1,4 +1,4 @@
-import Logo from "../assets/images/NMJ_Electric_Logo_Black_Yellow.svg";
+import Logo from "../assets/images/logo/NMJ_Electric_Logo_Black_Yellow.svg";
 
 export const company = {
   name: "NMJ Electric, LLC",
