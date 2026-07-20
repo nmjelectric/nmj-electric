@@ -20,7 +20,11 @@ import { services } from "../data/services";
 	<section class="services-grid">
 		{
 			services.map((service) => (
-				<article class="service-card">
+				<a
+					href={`/services/${service.slug}`}
+					class="service-card"
+					aria-label={`Learn more about ${service.title}`}
+				>
 					<div class="service-image">
 						<img
 							src={service.image.src}
@@ -31,9 +35,12 @@ import { services } from "../data/services";
 					<div class="service-content">
 						<h2>{service.title}</h2>
 						<p>{service.shortDescription}</p>
-						<a href={`/services/${service.slug}`}>Learn More →</a>
+
+						<span class="learn-more">
+							Learn More →
+						</span>
 					</div>
-				</article>
+				</a>
 			))
 		}
 	</section>
@@ -96,6 +103,19 @@ import { services } from "../data/services";
 		background: white;
 	}
 
+	.service-card {
+		display: flex;
+		flex-direction: column;
+
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.service-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 12px 30px rgba(0,0,0,.12);
+	}
+
 	.service-card h2 {
 		margin-top: 0;
 		font-size: 1.5rem;
@@ -112,5 +132,16 @@ import { services } from "../data/services";
 		font-weight: 700;
 		color: #0f3d73;
 		text-decoration: none;
+	}
+
+	.learn-more {
+		margin-top: auto;
+		color: #0f3d73;
+		font-weight: 700;
+		transition: color .2s ease;
+	}
+
+	.service-card:hover .learn-more {
+		color: #f7b719;
 	}
 </style>
